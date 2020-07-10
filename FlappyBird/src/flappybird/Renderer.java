@@ -1,3 +1,7 @@
+package flappybird;
+
+import flappybird.FlappyBird;
+
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
