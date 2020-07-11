@@ -18,12 +18,13 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
-public class FlappyBird implements ActionListener, MouseListener, KeyListener {
+public class FlappyBird extends Birdies implements ActionListener, MouseListener, KeyListener{
     //implementing interfaces to allow mouse click/space bar functionality
 
     public static FlappyBird flappyBird;
 
-    public final int WIDTH = 1200, HEIGHT = 800; //JFrame size
+    public final int WIDTH = 1200;
+    public static final int HEIGHT = 800; //JFrame size
 
     public Renderer renderer;
 
