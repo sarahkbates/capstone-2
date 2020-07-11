@@ -29,7 +29,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
     public Rectangle bird;
 
-    public List<Rectangle> columns; //continuous creation of rectangles (pipes)
+    public ArrayList<Rectangle> columns; //continuous creation of rectangles (pipes)
 
     public int ticks, yMotion, score;
 
@@ -164,10 +164,13 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
                 yMotion += 2;
             }
 
-            columns = Arrays.asList(columns.stream().filter(column -> column.x + column.width > 0).toArray(Rectangle[] :: new));
-                    if (columns.size() < 4) {
-                        addColumn(false);
+            var badColumns = (columns.stream().filter(column -> column.x + column.width < 0).toArray(Rectangle[] :: new));
+            for (Rectangle column : badColumns){
+                       columns.remove(column);
                     }
+            if (columns.size() < 8){
+                addColumn(false);
+            }
 
             bird.y += yMotion;
 
@@ -308,7 +311,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+        if (e.getKeyChar() == ' ') {
             handleInput();
         } else {
             wrongKey = true;
