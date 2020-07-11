@@ -249,19 +249,19 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
                 break;
 
             case COUNT3:
-                g.drawString("3", 350, HEIGHT / 2 - 50);
+                g.drawString("3", 600, HEIGHT / 2 - 50);
                 break;
 
             case COUNT2:
-                g.drawString("2", 350, HEIGHT / 2 - 50);
+                g.drawString("2", 600, HEIGHT / 2 - 50);
                 break;
 
             case COUNT1:
-                g.drawString("1", 350, HEIGHT / 2 - 50);
+                g.drawString("1", 600, HEIGHT / 2 - 50);
                 break;
 
             case COUNTGO:
-                g.drawString("GO!", 350, HEIGHT / 2 - 50);
+                g.drawString("GO!", 575, HEIGHT / 2 - 50);
                 break;
 
         }
